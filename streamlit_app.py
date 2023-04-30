@@ -4,6 +4,7 @@ import pandas as pd
 import requests
 from streamlit_option_menu import option_menu
 import pickle
+import urllib.request
 
 st.set_page_config(
     page_title="MovieBuzz",
@@ -42,9 +43,9 @@ if choose == "Home":
         """, unsafe_allow_html=True)
 
     # read the data through pickle, here movies_list is a dictionary.
-    movies_list = pickle.load(open('movies.pkl', 'rb'))
+    movies_list = pickle.load(urllib.request.urlopen("https://www.dropbox.com/s/jv6v1sv3or8e8uw/movies.pkl?dl=1"))
     # read the similarity matrix also
-    similarity = pickle.load(open('similarity.pkl', 'rb'))
+    similarity = pickle.load(urllib.request.urlopen("https://www.dropbox.com/s/hkhy3c0b4y95v7q/similarity.pkl?dl=1"))
 
     # movies_set is the required dataframe  (movies_set == new_df)
     movies_set = pd.DataFrame(movies_list)
