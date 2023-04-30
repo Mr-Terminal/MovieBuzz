@@ -26,10 +26,10 @@ with st.sidebar:
     )
 
 movies = pd.read_csv("./dataframes/tmdb_5000_movies.csv")
-credits = pd.read_csv("./dataframes/tmdb_5000_credits.csv")
+credit = pd.read_csv("./dataframes/tmdb_5000_credits.csv")
 
 # merge the two dataframes
-movies = movies.merge(credits, on='title')
+movies = pd.merge(movies,credit, left_on=['title'], right_on=['title'],how='left')
 
 
 if choose == "Home":
