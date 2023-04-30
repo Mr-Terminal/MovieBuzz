@@ -26,11 +26,14 @@ with st.sidebar:
     }
     )
 
-movies = pd.read_csv('https://www.dropbox.com/s/vd8etoxpj9ctfko/tmdb_5000_movies.csv?dl=1')
-credit = pd.read_csv('https://www.dropbox.com/s/5linnvejcaed39v/tmdb_5000_credits.csv?dl=1')
+movies = pd.read_csv(
+    'https://www.dropbox.com/s/vd8etoxpj9ctfko/tmdb_5000_movies.csv?dl=1')
+credit = pd.read_csv(
+    'https://www.dropbox.com/s/5linnvejcaed39v/tmdb_5000_credits.csv?dl=1')
 
 # merge the two dataframes
-movies = pd.merge(movies,credit, left_on=['title'], right_on=['title'],how='left')
+movies = pd.merge(movies, credit, left_on=[
+                  'title'], right_on=['title'], how='left')
 
 
 if choose == "Home":
@@ -43,17 +46,18 @@ if choose == "Home":
         """, unsafe_allow_html=True)
 
     # read the data through pickle, here movies_list is a dictionary.
-    movies_list = pickle.load(urllib.request.urlopen("https://www.dropbox.com/s/jv6v1sv3or8e8uw/movies.pkl?dl=1"))
+    movies_list = pickle.load(urllib.request.urlopen(
+        "https://www.dropbox.com/s/jv6v1sv3or8e8uw/movies.pkl?dl=1"))
     # read the similarity matrix also
-    similarity = pickle.load(urllib.request.urlopen("https://www.dropbox.com/s/hkhy3c0b4y95v7q/similarity.pkl?dl=1"))
+    similarity = pickle.load(urllib.request.urlopen(
+        "https://www.dropbox.com/s/hkhy3c0b4y95v7q/similarity.pkl?dl=1"))
 
     # movies_set is the required dataframe  (movies_set == new_df)
     movies_set = pd.DataFrame(movies_list)
 
-    
     selected_movie = st.selectbox(
         'Search for a movie', movies_set['title'].values)
-    
+
     @st.experimental_memo
     def fetch_poster(movie_id):
         result = requests.get(
@@ -61,12 +65,12 @@ if choose == "Home":
         data = result.json()
         return "https://image.tmdb.org/t/p/w500" + data["poster_path"]
 
-    
     def recommend(movie):
 
         movie_index = movies_set[movies_set['title'] == movie].index[0]
         distances = similarity[movie_index]
-        movies_list = sorted(list(enumerate(distances)),reverse=True, key=lambda x: x[1])[0:6]
+        movies_list = sorted(list(enumerate(distances)),
+                             reverse=True, key=lambda x: x[1])[0:6]
 
         recommended_movies = []
         recommended_movies_posters = []
@@ -94,11 +98,11 @@ if choose == "Home":
             st.image(posters[4], caption=names[4], width=150)
         with col6:
             st.image(posters[5], caption=names[5], width=150)
-   
+
     else:
 
         id = movies['id'].values  # here id is an array
-        
+
         @st.experimental_memo
         def fetch_data(movie_id):
             result = requests.get(
@@ -220,28 +224,30 @@ elif choose == "Genre":
     """, unsafe_allow_html=True)
 
     # read the data through pickle, here movies_list is a dictionary.
-    movies_list = pickle.load(open('movies.pkl', 'rb'))
+    movies_list = pickle.load(urllib.request.urlopen(
+        "https://www.dropbox.com/s/jv6v1sv3or8e8uw/movies.pkl?dl=1"))
     # read the similarity matrix also
-    similarity = pickle.load(open('similarity.pkl', 'rb'))
+    similarity = pickle.load(urllib.request.urlopen(
+        "https://www.dropbox.com/s/hkhy3c0b4y95v7q/similarity.pkl?dl=1"))
 
     # movies_set is the required dataframe  (movies_set == new_df)
     movies_set = pd.DataFrame(movies_list)
     selected_movie = st.selectbox(
         'Search for a movie', movies_set['title'].values)
-    
+
     @st.experimental_memo
     def fetch_poster(movie_id):
         result = requests.get(
             f'https://api.themoviedb.org/3/movie/{movie_id}?api_key=0e598e9ce44fd2e9a98ef9517e95fafb&language=en-US')
         data = result.json()
         return "https://image.tmdb.org/t/p/w500" + data["poster_path"]
-    
-    
+
     def recommend(movie):
 
         movie_index = movies_set[movies_set['title'] == movie].index[0]
         distances = similarity[movie_index]
-        movies_list = sorted(list(enumerate(distances)),reverse=True, key=lambda x: x[1])[0:6]
+        movies_list = sorted(list(enumerate(distances)),
+                             reverse=True, key=lambda x: x[1])[0:6]
 
         recommended_movies = []
         recommended_movies_posters = []
@@ -554,28 +560,30 @@ elif choose == "Top Rated":
     """, unsafe_allow_html=True)
 
     # read the data through pickle, here movies_list is a dictionary.
-    movies_list = pickle.load(open('movies.pkl', 'rb'))
+    movies_list = pickle.load(urllib.request.urlopen(
+        "https://www.dropbox.com/s/jv6v1sv3or8e8uw/movies.pkl?dl=1"))
     # read the similarity matrix also
-    similarity = pickle.load(open('similarity.pkl', 'rb'))
+    similarity = pickle.load(urllib.request.urlopen(
+        "https://www.dropbox.com/s/hkhy3c0b4y95v7q/similarity.pkl?dl=1"))
 
     # movies_set is the required dataframe  (movies_set == new_df)
     movies_set = pd.DataFrame(movies_list)
     selected_movie = st.selectbox(
         'Search for a movie', movies_set['title'].values)
-    
+
     @st.experimental_memo
     def fetch_poster(movie_id):
         result = requests.get(
             f'https://api.themoviedb.org/3/movie/{movie_id}?api_key=0e598e9ce44fd2e9a98ef9517e95fafb&language=en-US')
         data = result.json()
         return "https://image.tmdb.org/t/p/w500" + data["poster_path"]
-    
-    
+
     def recommend(movie):
 
         movie_index = movies_set[movies_set['title'] == movie].index[0]
         distances = similarity[movie_index]
-        movies_list = sorted(list(enumerate(distances)),reverse=True, key=lambda x: x[1])[0:6]
+        movies_list = sorted(list(enumerate(distances)),
+                             reverse=True, key=lambda x: x[1])[0:6]
 
         recommended_movies = []
         recommended_movies_posters = []
