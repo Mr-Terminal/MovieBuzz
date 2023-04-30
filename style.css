@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.topnav {
+  background-color: #1b1e25;
+  overflow: hidden;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  height: 5rem;
+  border-bottom: 1px solid rgb(42, 41, 41);
+}
+.heading{
+    /* font-size: medium; */
+    /* padding: 0; */
+    width: 100%;
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 3.5rem;
+    padding-top: 1.5rem;
+    font-family: 'Comfortaa', cursive;
+    font-weight: 600;
+}
+.css-fblp2m{
+    /* display: absolute !important; */
+    font-size: 20px;
+
+}
+ .e8zbici2{
+    height: 0px;
+} 
+
+.css-k1ih3n{
+    padding: 0;
+    
+}
+.css-10pw50.egzxvld1{
+    display: none;
+}
+
+.e1tzin5v0{
+  gap: 0;
+}
+.css-uzfz7i{
+    top: 1.5rem;
+}
+.css-renyox{
+    top: 1.5rem;
+}
+.stSelectbox{
+    width: 650px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    top: 50px;
+    margin-bottom: 1rem !important;
+}
+.css-1yy6isu p  {
+    font-family: 'Poppins',sans-serif !important;
+    font-weight: 700;
+    font-size: 1rem;
+    
+}
+.st-bx{
+    border-radius: 12px !important;
+    padding: 5px !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+.stButton{
+    width: 100px !important;
+    margin: 0 auto !important;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 50px;
+    z-index: 1 !important;
+    padding: 10px;
+}
+.css-1fv8s86 p {
+    font-family: 'Poppins',sans-serif !important;
+    font-size: 15px;
+}
+.css-5uatcg{
+    padding: 8px 12px !important;
+    border-radius: 15px !important;   
+    margin-bottom: .5rem !important;
+}
+
+#all-time-hit{
+    padding: 20px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    padding-left: 3rem;
+    font-family: 'Poppins',sans-serif;
+    
+}
+#recommended-for-you{
+    padding: 20px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    padding-left: 3rem;
+    font-family: 'Poppins',sans-serif;
+}
+.e19lei0e1{
+    display: none;
+}
+.e1tzin5v4{
+    padding: 20px;
+    padding-left: 3rem;
+    /* position: relative;
+    bottom: 2rem; */
+}
+.etr89bj2 img{
+    height: 10rem;
+    width: 5rem;
+}
+.css-ltfnpr{
+    text-align: left;
+}
+#trending-now{
+    padding: 20px;
+    font-size: 1rem;
+    margin-top: 2rem;
+    padding-left: 3rem;
+    font-family: 'Poppins',sans-serif;
+}
+.css-t2bj6i{
+    display: none;
+}
+.css-912zdv{
+    display: none;
+}
+#action-and-adventure{
+    padding: 20px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    padding-left: 3rem;
+    font-family: 'Poppins',sans-serif;
+}
+#family-and-drama{
+    padding: 20px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    padding-left: 3rem;
+    font-family: 'Poppins',sans-serif;
+}
+#horror{
+    padding: 20px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    padding-left: 3rem;
+    font-family: 'Poppins',sans-serif;
+}
+#comedy{
+    padding: 20px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    padding-left: 3rem;
+    font-family: 'Poppins',sans-serif;
+}
+#romance{
+    padding: 20px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    padding-left: 3rem;
+    font-family: 'Poppins',sans-serif;
+}
+#top-rated{
+    padding: 20px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    padding-left: 3rem;
+    font-family: 'Poppins',sans-serif;
+}
+#MainMenu{
+    visibility: hidden;
+}
+.css-1gk2i2l{
+   margin-left: 2rem;
+}
+.st-cd{
+    font-family: 'Poppins',sans-serif !important;
+}
