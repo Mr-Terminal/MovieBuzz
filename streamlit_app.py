@@ -25,8 +25,8 @@ with st.sidebar:
     }
     )
 
-movies = pd.read_csv("./dataframes/tmdb_5000_movies.csv")
-credit = pd.read_csv("./dataframes/tmdb_5000_credits.csv")
+movies = pd.read_csv('https://www.dropbox.com/s/vd8etoxpj9ctfko/tmdb_5000_movies.csv?dl=1')
+credit = pd.read_csv('https://www.dropbox.com/s/5linnvejcaed39v/tmdb_5000_credits.csv?dl=1')
 
 # merge the two dataframes
 movies = pd.merge(movies,credit, left_on=['title'], right_on=['title'],how='left')
